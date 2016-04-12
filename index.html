@@ -4,23 +4,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    
     <link rel="stylesheet" href="css\style.css">
     <title>Health Tracker</title>
 </head>
 
 <body>
-<div id="container-main">
-    <span id="search-text">Search:</span>
-    <input id="search-input" placeholder="Type in your food here" size="25">
-    <button id="search-button" type="button">Go</button>
-    <div id="container-results">
-        <ul id="food-list">
-            <li class="food-item"></li>
-        </ul>
+    <div id="container-main">
+        <span id="search-text">Search:</span>
+        <input id="search-input" placeholder="Type in your food here" size="25">
+        <button id="search-button" type="button">Go</button>
+        <div id="container-results">
+            <ul id="food-list">
+                <li class="food-item"></li>
+            </ul>
+        </div>
     </div>
-</div>
-
+    <script src="js/lib/jquery-2.2.3.min.js"></script>
+    <script src="js/lib/underscore-min.js"></script>
+    <script src="js/lib/backbone-min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
