@@ -28,7 +28,9 @@ app.AppView = Backbone.View.extend({
 
     // Display the food item.
     displayFoodItem: function(foodItem) {
-
+    	// TODO: create new view and append rendered view to element
+    	// example: var view = new app.TodoView({ model: todo });
+        //          $('#todo-list').append(view.render().el);  
     },
 
     // Nutritionix API query
