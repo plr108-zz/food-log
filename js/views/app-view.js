@@ -4,5 +4,13 @@ var app = app || {};
 
 app.AppView = Backbone.View.extend({
 
-	el: '#health-tracker-app'
+	el: '#health-tracker-app',
+
+	init: function() {
+
+	},
+
+	render: function() {
+		
+	}
 });
