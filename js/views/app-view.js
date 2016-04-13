@@ -28,8 +28,14 @@ app.AppView = Backbone.View.extend({
 
         $.getJSON(queryUrl)
             .done(function(json) {
-                // write returned JSON to console
-                console.log(json);
+                if (json.hits.length > 0) {
+                    // write returned JSON to console
+                    for (var i = 0; i < json.hits.length; i++) {
+                        console.log(json.hits[i].fields.item_name);
+                    }
+                } else {
+                    console.log("Your search: " + queryString + "did not match any listings in the Nutritionix database");
+                }
             })
             .fail(function(jqxhr) {
                 console.log("Error getting food info from Nutritionix");
