@@ -18,6 +18,14 @@ app.AppView = Backbone.View.extend({
 
     },
 
+    // Query the Nutritionix API using the value of the search input.
+    // Display the results (food items) 
+    getFoodItems: function() {
+
+        var queryString = $('#search-input').val();
+        this.queryNutritionixAPI(queryString);
+    },
+
     // Nutritionix API query
     queryNutritionixAPI: function(queryString) {
         var queryUrl = 'https://api.nutritionix.com/v1_1/search/' +
@@ -42,13 +50,5 @@ app.AppView = Backbone.View.extend({
                 //write the returned object to console
                 console.log(jqxhr);
             });
-    },
-
-    // Query the Nutritionix API using the value of the search input.
-    // Display the results (food items) 
-    getFoodItems: function() {
-
-        var queryString = $('#search-input').val();
-        this.queryNutritionixAPI(queryString);
     }
 });
