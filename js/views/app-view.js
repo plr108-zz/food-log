@@ -26,6 +26,12 @@ app.AppView = Backbone.View.extend({
         this.queryNutritionixAPI(queryString);
     },
 
+    // Display the food item.
+    // Note: food item will not be added to model until it is added to stomach
+    displayFoodItem: function(foodItem) {
+
+    },
+
     // Nutritionix API query
     queryNutritionixAPI: function(queryString) {
         var queryUrl = 'https://api.nutritionix.com/v1_1/search/' +
