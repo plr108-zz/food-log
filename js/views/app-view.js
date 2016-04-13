@@ -27,7 +27,6 @@ app.AppView = Backbone.View.extend({
     },
 
     // Display the food item.
-    // Note: food item will not be added to model until it is added to stomach
     displayFoodItem: function(foodItem) {
 
     },
