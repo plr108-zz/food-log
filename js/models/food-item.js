@@ -13,11 +13,11 @@ var app = app || {};
 // serving_size_unit
 // servings_consumed - this is a multiplier used to track how much of the food item was consumed by the user
 
-app.Todo = Backbone.Model.extend({
+app.FoodItem = Backbone.Model.extend({
 
     defaults: {
-        item_name: '',
-        brand_name: '',
+        item_name: 'Some Item Name',
+        brand_name: 'Some Brand',
         calories: 0,
         saturated_fat: 0,
         sodium: 0,
@@ -25,5 +25,5 @@ app.Todo = Backbone.Model.extend({
         serving_size_qty: 0,
         serving_size_unit: 0,
         servings_consumed: 1
-    },
+    }
 });
