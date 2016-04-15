@@ -49,7 +49,7 @@ app.AppView = Backbone.View.extend({
                         console.log(json.hits[i].fields.item_name);
                     }
                 } else {
-                    console.log("Your search: " + queryString + "did not match any listings in the Nutritionix database");
+                    console.log("Your search: " + queryString + " did not match any listings in the Nutritionix database");
                 }
             })
             .fail(function(jqxhr) {
