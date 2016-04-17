@@ -15,15 +15,16 @@ var app = app || {};
 
 app.FoodItem = Backbone.Model.extend({
 
+    // to start, the defaults are dummy values as this iteration of the app will just display one food item
     defaults: {
         item_name: 'Some Item Name',
         brand_name: 'Some Brand',
-        calories: 0,
-        saturated_fat: 0,
-        sodium: 0,
-        sugars: 0,
-        serving_size_qty: 0,
-        serving_size_unit: 0,
+        calories: 360,
+        saturated_fat: 10,
+        sodium: 9,
+        sugars: 8,
+        serving_size_qty: 1,
+        serving_size_unit: "cup",
         servings_consumed: 1
     }
 });
