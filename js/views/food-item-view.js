@@ -15,10 +15,13 @@ app.FoodItemView = Backbone.View.extend({
     },
 
     init: function() {
-
+        this.$el = $('#todo');
     },
 
     render: function() {
 
     }
 });
+
+// create a view for a food item
+var foodItemView = new ToDoView({ model: dummyFoodItem });

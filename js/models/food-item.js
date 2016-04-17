@@ -28,3 +28,6 @@ app.FoodItem = Backbone.Model.extend({
         servings_consumed: 1
     }
 });
+
+// Instantiate FoodItem Model
+var dummyFoodItem = new FoodItem({});
