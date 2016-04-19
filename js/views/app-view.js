@@ -10,8 +10,9 @@ app.AppView = Backbone.View.extend({
         'click #search-button': 'getFoodItems'
     },
 
-    initialize: function() {
+    initialize: function(options) {
         
+        this.options = options || {};
     },
 
     render: function() {

@@ -29,5 +29,5 @@ var FoodItem = Backbone.Model.extend({
     }
 });
 
-// Instantiate FoodItem Model.  The FoodItem in the model has default values.ß
+// Instantiate FoodItem Model.  The FoodItem in the model has default values.
 var dummyFoodItem = new FoodItem({});
