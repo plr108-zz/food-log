@@ -2,7 +2,7 @@
 
 var app = app || {};
 
-var FoodItemView = Backbone.View.extend({
+app.FoodItemView = Backbone.View.extend({
     // DOM element for food item
     tagName: 'li',
 
@@ -15,13 +15,14 @@ var FoodItemView = Backbone.View.extend({
     },
 
     init: function() {
-        this.$el = $('#todo');
+        this.$el = $('#food-list');
     },
 
     render: function() {
-
+        this.$el.html(this.template(this.model.attributes));
+        return this;
     }
 });
 
 // create a view for a food item
-var foodItemView = new FoodItemView({ model: dummyFoodItem });
+//var foodItemView = new FoodItemView({ model: dummyFoodItem });

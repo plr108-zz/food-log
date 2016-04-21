@@ -13,7 +13,7 @@ var app = app || {};
 // serving_size_unit
 // servings_consumed - this is a multiplier used to track how much of the food item was consumed by the user
 
-var FoodItem = Backbone.Model.extend({
+app.FoodItem = Backbone.Model.extend({
 
     // to start, the defaults are dummy values as this iteration of the app will just display one food item
     defaults: {
@@ -30,4 +30,4 @@ var FoodItem = Backbone.Model.extend({
 });
 
 // Instantiate FoodItem Model.  The FoodItem in the model has default values.
-var dummyFoodItem = new FoodItem({});
+//app.FoodItem = new FoodItem({});

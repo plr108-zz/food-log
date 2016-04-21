@@ -7,18 +7,24 @@ app.AppView = Backbone.View.extend({
     el: '#health-tracker-app',
 
     events: {
-        'click #search-button': 'getFoodItems'
+        'click #search-button': 'getFoodItems',
+        'click #create-button': 'addFoodItem'
     },
 
     initialize: function(options) {
         
         this.options = options || {};
+        app.FoodItemResults.fetch();
     },
 
     render: function() {
-
+        //this.$el.append(foodItemView.render().el);
     },
 
+    addFoodItem: function() {
+
+    },
+    
     // Query the Nutritionix API using the value of the search input.
     // Display the results (food items) 
     getFoodItems: function() {
@@ -61,4 +67,4 @@ app.AppView = Backbone.View.extend({
     }
 });
 
-var appView = new app.AppView();
+//var appView = new app.AppView();
