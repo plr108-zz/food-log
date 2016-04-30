@@ -13,4 +13,5 @@ var FoodItemList = Backbone.Firebase.Collection.extend({
     url: "https://intense-inferno-5722.firebaseio.com"
 });
 
+// Create global collection of FoodItems
 app.FoodItemResults = new FoodItemList();
