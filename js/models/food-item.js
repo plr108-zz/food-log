@@ -28,6 +28,3 @@ app.FoodItem = Backbone.Model.extend({
         servings_consumed: 1
     }
 });
-
-// Instantiate FoodItem Model.  The FoodItem in the model has default values.
-//app.FoodItem = new FoodItem({});
