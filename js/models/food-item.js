@@ -3,15 +3,15 @@
 var app = app || {};
 
 // food_item attributes:
-// item_name
-// brand_name
-// calories
-// saturated_fat
-// sodium
-// sugars
-// serving_size_qty
-// serving_size_unit
-// servings_consumed - this is a multiplier used to track how much of the food item was consumed by the user
+//   item_name
+//   brand_name
+//   calories
+//   saturated_fat
+//   sodium
+//   sugars
+//   serving_size_qty
+//   serving_size_unit
+//   servings_consumed - this is a multiplier used to track how much of the food item was consumed by the user
 
 app.FoodItem = Backbone.Model.extend({
 
