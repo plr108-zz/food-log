@@ -10,16 +10,25 @@
 
 <body>
     <div id="health-tracker-app">
+        <!-- Search Nutritionix API -->
         <div id="container-search">
             <label for="search-input">Food Search:</label>
             <input id="search-input" placeholder="Guacamole" size="25">
             <button id="search-button" type="button">Go</button>
         </div>
-        <div id="create-record">
-            <button id="create-button" type="button">Create Record</button>
-        </div>
+        <!-- Search Results -->
         <div id="container-results">
-            <ul id="food-item-list">
+            <ul id="results-list">
+                <li class="result"></li>
+            </ul>
+        </div>
+        <!-- Add search result to Food Log -->
+        <div id="add-to-food-log">
+            <button id="add-button" type="button">Add to Food Log</button>
+        </div>
+        <!-- Food Log -->
+        <div id="container-results">
+            <ul id="food-log">
                 <li class="food-item"></li>
             </ul>
         </div>
