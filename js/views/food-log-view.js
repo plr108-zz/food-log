@@ -1,4 +1,4 @@
-// js/views/food-item.view
+// js/views/food-log-view.ls
 
 var app = app || {};
 
@@ -14,8 +14,8 @@ app.FoodItemView = Backbone.View.extend({
 
     },
 
-    init: function() {
-        this.$el = $('#food-list');
+    initialize: function() {
+        this.listenTo(this.model, 'change', this.render);
     },
 
     render: function() {
@@ -23,6 +23,3 @@ app.FoodItemView = Backbone.View.extend({
         return this;
     }
 });
-
-// create a view for a food item
-//var foodItemView = new FoodItemView({ model: dummyFoodItem });

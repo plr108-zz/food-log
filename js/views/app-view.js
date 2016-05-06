@@ -4,40 +4,64 @@ var app = app || {};
 
 app.AppView = Backbone.View.extend({
 
-    el: '#health-tracker-app',
+    // el: '#health-tracker-app',
+
+    // replacing el value to support basic Hello World example
+    el: $('body'),
 
     events: {
         'click #search-button': 'getFoodItems',
-        'click #create-button': 'addFoodItem'
+        'click #add-button': 'addOne'
     },
 
     initialize: function(options) {
-        
-        this.options = options || {};
-        app.FoodItemResults.fetch();
+
+        //this.$foodItem = this.$('#food-item');
+        //this.options = options || {};
+        //app.FoodItemResults.fetch();
+
+        // replacing food log creation with basic Hello World example
+        _.bindAll(this, 'render');
+        $(app.AppView.el).append("<ul> <li>hello world</li> </ul>");
     },
 
     render: function() {
-        //this.$el.append(foodItemView.render().el);
+        //this.$el.append(app.FoodItemView.render().el);
+
+        // replacing food log rendering with basic Hello World example
+
+        
     },
 
-    addFoodItem: function() {
-
+    addOne: function(foodItem) {
+        foodItem = {
+            item_name: 'Some Item Name',
+            brand_name: 'Some Brand',
+            calories: 360,
+            saturated_fat: 10,
+            sodium: 9,
+            sugars: 8,
+            serving_size_qty: 1,
+            serving_size_unit: "cup",
+            servings_consumed: 1
+        };
+        console.log(foodItem.item_name);
+        var view = new app.FoodItemView({ model: foodItem });
+        $('#food-log').append(view.render().el);
     },
-    
+
+    // Add all items in the Food Log collection at once.
+    addAll: function() {
+        this.$('#food-log').html('');
+        app.Todos.each(this.addOne, this);
+    },
+
     // Query the Nutritionix API using the value of the search input.
     // Display the results (food items) 
     getFoodItems: function() {
 
         var queryString = $('#search-input').val();
         this.queryNutritionixAPI(queryString);
-    },
-
-    // Display the food item.
-    displayFoodItem: function(foodItem) {
-    	// TODO: create new view and append rendered view to element
-    	// example: var view = new app.TodoView({ model: todo });
-        //          $('#todo-list').append(view.render().el);  
     },
 
     // Nutritionix API query
