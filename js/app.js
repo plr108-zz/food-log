@@ -2,6 +2,7 @@
 var Todo = Backbone.Model.extend({
     defaults: { title: "New Todo" }
 });
+
 // Create a Firebase.Collection and set the 'firebase' property
 // to the URL of our database
 var TodoCollection = Backbone.Firebase.Collection.extend({
@@ -10,18 +11,6 @@ var TodoCollection = Backbone.Firebase.Collection.extend({
 });
 
 var TodoView = Backbone.View.extend({
-    tagName: "li",
-    template: _.template("<%= title %>"),
-    initialize: function() {
-        this.listenTo(this.model, "change", this.render);
-    },
-    render: function() {
-        this.$el.html(this.template(this.model.toJSON()));
-        return this;
-    }
-});
-
-var FoodResultView = Backbone.View.extend({
     tagName: "li",
     template: _.template("<%= title %>"),
     initialize: function() {
@@ -69,7 +58,6 @@ var AppView = Backbone.View.extend({
     getFoodItems: function() {
         var queryString = $('#search-input').val();
         this.queryNutritionixAPI(queryString);
-        this.collection.create({ title: "Some Food" });
     },
 
     // Nutritionix API query
@@ -83,11 +71,12 @@ var AppView = Backbone.View.extend({
         $.getJSON(queryUrl)
             .done(function(json) {
                 if (json.hits.length > 0) {
-                    // write returned JSON to console
-                    //for (var i = 0; i < json.hits.length; i++) {
-                        console.log(json.hits[0].fields.item_name);
-                        //this.addOne(json.hits[0].fields.item_name);
-                    //}
+                	var result = json.hits[0].fields.item_name;
+                    console.log("Search result: " + result);
+
+                    // write result to #results-list using jQuery
+                    $('#results-list').append('<li>' + result + '</li>');
+
                 } else {
                     console.log("Your search: " + queryString + " did not match any listings in the Nutritionix database");
                 }
