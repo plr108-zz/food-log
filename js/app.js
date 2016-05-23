@@ -53,11 +53,22 @@ var AppView = Backbone.View.extend({
         this.collection.create({ title: this.input.val() });
         this.input.val('');
     },
+    createFoodLogRecord: function(e) {
+        // create a new location in firebase and save the model data
+        // this will trigger the listenTo method above and a new todo view
+        // will be created as well
+
+        this.collection.create({ title: e });
+        this.input.val('');
+    },
     // Query the Nutritionix API using the value of the search input.
     // Display the results (food items) 
     getFoodItems: function() {
         var queryString = $('#search-input').val();
         this.queryNutritionixAPI(queryString);
+        
+        // For now create item using query string
+        this.createFoodLogRecord(queryString);
     },
 
     // Nutritionix API query
@@ -71,10 +82,11 @@ var AppView = Backbone.View.extend({
         $.getJSON(queryUrl)
             .done(function(json) {
                 if (json.hits.length > 0) {
-                	var result = json.hits[0].fields.item_name;
+                    var result = json.hits[0].fields.item_name;
                     console.log("Search result: " + result);
 
                     // write result to #results-list using jQuery
+                    // TODO: display this in a view using Backbone
                     $('#results-list').append('<li>' + result + '</li>');
 
                 } else {
